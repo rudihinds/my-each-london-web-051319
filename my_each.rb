@@ -1,10 +1,15 @@
-def my_each(array)
-  i = 0
-  newArr = []
-  while i < array.length
-  yield array[i]
-  newArr << array[i]
+def my_each(hash)
+  i = 1
+  newHash = []
+  while i < hash.length
+  yield(hash)
+  newHash << hash[i]
   i += 1
 end
-newArr
+newHash.to_h
+end
+collection = {key1: 1, key2: 2, key3: 3, key4: 4}
+
+my_each(collection) do |i|
+  puts i
 end
